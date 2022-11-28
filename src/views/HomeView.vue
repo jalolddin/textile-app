@@ -6,16 +6,18 @@
         <div class="main__header">
           <div v-motion-fade-visible :delay="200" class="main__header__text">
             <h1>
-          <span> “Amira Textile” </span> - <br> сочетание стиля <br> и комфорта 
+          <span> “Amira Textile” </span> - сочетание стиля и комфорта 
             </h1>
-            <button @click="clothes('clothes')">Просмотреть продукты</button>
+            <router-link :to="{name: 'products'}">
+            <button>
+              Просмотреть продукты
+            </button>
+          </router-link>
           </div>
         </div>
         <!-- About__company -->
         <div ref="proccess" class="main__company">
-    <video controls ref="videoRef">
-      <source autostart="false" type="video/mp4" src="../assets/images/company__video.mp4" />
-    </video>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/9I02a1TPykI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <div>
               <h1>Процесс производство</h1>
             <p>Трикотажная фабрика <span> “Amira Textile” </span> произоводит комфортную и стильную одежду для взрослых и детей.
@@ -28,22 +30,18 @@
 <h1>Kompany <span>"Amira Textile" </span></h1>
 <p>Наша компания производит различные трикотажную продукцию с мая 2022года.</p>
 <div class="benefits">
-  <div>
     <span>Рубашки поло</span>
     <span>Мужские джемперы</span>
     <span>Мужские свитера</span>
     <span>Мужская обувь</span>
-  </div>
-  <div>
     <span>Женские трикотажные костюмы</span>
     <span>Женские платья</span>
     <span>Женская обувь</span>
-  </div>
-    <div>
+    <span>Женские кофты</span>
+    <span>Женские кардиганы</span>
       <span>Одежда для мальчиков</span>
       <span>Одежда для девочек</span>
       <span>Головные уборы</span>
-    </div>
 </div> 
 <p>Натуральные волокна обеспечивают комфорт и экологичность при носке.
 Высокотехнологичное оборудование позволяет производить трикотажные изделия любой сложности. Система контроля качества
@@ -94,19 +92,7 @@
 
 <!-- Our products -->
 
-<div ref="clothes" class="main__products">
-  <h1>Наши продукты</h1>
-  <div>
-    <img src="../assets/products/women_1.jpg" alt="">
-    <img src="../assets/products/women_2.jpg" alt="">
-    <img src="../assets/products/women_3.jpg" alt="">
-    <img src="../assets/products/women_4.jpg" alt="">
-    <img src="../assets/products/women_5.jpg" alt="">
-    <img src="../assets/products/women_6.jpg" alt="">
-    <img src="../assets/products/women_7.jpg" alt="">
-    <img src="../assets/products/women_8.jpg" alt="">
-  </div>
-</div>
+
 
 <!-- News -->
 
@@ -133,9 +119,7 @@
 <div class="main__map">
   <h1>Наша геолокация</h1>
   <div class="mapouter">
-    <div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=fergana beshaliq&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-    </div>
+    <iframe src="https://yandex.uz/map-widget/v1/-/CCUbMGwUWC" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
   </div>
 </div>
 
@@ -143,7 +127,7 @@
 <div class="main__footer">
 <div class="logo">
   <img src="../assets/images/amiran__logo.png" alt="">
-  <h3> - сочетание стиля <br> и комфорта</h3>
+  <h3>сочетание стиля и комфорта</h3>
 </div>
 <div class="line"></div>
 <div class="address">
@@ -157,17 +141,27 @@
   <h2>Контакты</h2>
   <div>
   <p>+998934820707</p>
-  <p>amiragroup.uz@gmail.com</p>
+  <a href="https://mail.google.com/mail">
+    <p>amiragroup.uz@gmail.com</p>
+  </a>
   </div>
 </div>
 <div class="line"></div>
 <div class="social">
   <h2>Социальные сеть</h2>
   <div>
-    <img src="../assets/icons/telegram.svg" alt="">
-    <img src="../assets/icons/instagram.svg" alt="">
-    <img src="../assets/icons/facebook.svg" alt="">
-    <img src="../assets/icons/youtube.svg" alt="">
+    <a href="https://t.me/amiragroupuz">
+      <img src="../assets/icons/telegram.svg" alt="">
+    </a>
+    <a href="https://www.instagram.com/amiragroup.uz/">
+      <img src="../assets/icons/instagram.svg" alt="">
+    </a>
+    <a href="https://www.facebook.com/amiragroup.uz/">
+      <img src="../assets/icons/facebook.svg" alt="">
+    </a>
+    <a href="https://www.youtube.com/channel/UCR2GxQbZ9QrHRMkvjkO_SxA">
+      <img src="../assets/icons/youtube.svg" alt="">
+    </a>
   </div>
 
 </div>
@@ -181,8 +175,6 @@
 // @ is an alias to /src
 import Navbar from '../components/Navbar.vue'
 
-import 'swiper/css'
-import 'swiper/css/pagination'
 export default {
   name: 'HomeView',
   components: {

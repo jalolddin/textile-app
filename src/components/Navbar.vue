@@ -1,15 +1,10 @@
 <template>
     <div class="navbar">
         <!-- Logo -->
-
-        <img class="navbar__logo" src="../assets/images/amiran__logo.png" alt="Logo" />
-
-        <!-- Navbar Catalog -->
-
-        <div @click="catalog" class="navbar__catalog">
-            <img src="../assets/icons/dropdown.png" alt="" />
-            <h2>Категория</h2>
-        </div>
+<router-link :to="{name: 'home'}">
+    <img class="navbar__logo" src="../assets/images/amiran__logo.png" alt="Logo" />
+</router-link>
+            
 
         <!-- Navbar Links -->
 
