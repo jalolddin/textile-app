@@ -43,7 +43,9 @@ body {
     margin-top: -.5rem
 }
 
-.main__header__text button {
+.main__header__text select {
+    outline: none;
+    padding-left: 1rem;
     width: 25%;
     height: 3.6rem;
     border-radius: .8rem;

@@ -4,15 +4,20 @@
       <div class="main">
         <!-- Header -->
         <div class="main__header">
-          <div v-motion-fade-visible :delay="200" class="main__header__text">
+          <div class="main__header__text">
             <h1>
           <span> “Amira Textile” </span> - сочетание стиля и комфорта 
             </h1>
-            <router-link :to="{name: 'products'}">
-            <button>
-              Просмотреть продукты
-            </button>
-          </router-link>
+            <!-- <router-link :to="{name: 'products'}"> -->
+              <select v-on:change="changeRoute($event)" name="categories" id="#">
+                <option value="Посмотреть продукты" disabled selected>Просмотреть продукты</option>
+                <option value="products/women">Женские одежды</option>
+                  <option value="products/men">Мужские одежды</option>
+                  <option value="products/kids">Детские одежды</option>
+                  <option value="products/shoes">Обуви</option>
+                  <option value="products/hats">Головные уборы</option>
+              </select>
+          <!-- </router-link> -->
           </div>
         </div>
         <!-- About__company -->
@@ -39,9 +44,9 @@
     <span>Женская обувь</span>
     <span>Женские кофты</span>
     <span>Женские кардиганы</span>
-      <span>Одежда для мальчиков</span>
-      <span>Одежда для девочек</span>
-      <span>Головные уборы</span>
+    <span>Одежда для мальчиков</span>
+    <span>Одежда для девочек</span>
+    <span>Головные уборы</span>
 </div> 
 <p>Натуральные волокна обеспечивают комфорт и экологичность при носке.
 Высокотехнологичное оборудование позволяет производить трикотажные изделия любой сложности. Система контроля качества
@@ -174,13 +179,22 @@
 <script>
 // @ is an alias to /src
 import Navbar from '../components/Navbar.vue'
-
+import axios from 'axios'
 export default {
   name: 'HomeView',
+  data(){
+    return{
+      categories: [],
+      selected: 'Посмотреть продукты'
+    }
+  },
   components: {
     Navbar,
   },
   methods: {
+    changeRoute(e) {
+    this.$router.push("/" + e.target.value);
+  },
     goto(refName) {
       var element = this.$refs[refName];
       var top = element.offsetTop;
@@ -192,6 +206,14 @@ export default {
       window.scrollTo(0, top);
     },
   },
-
+  created() {
+            axios.get(`https://amiragroup.uz/api/categories/`).then((response) => {
+                 this.categories = response.data
+                 
+                })
+                .catch((e) => {
+                  console.error(e);
+                });
+        },
  }
 </script>

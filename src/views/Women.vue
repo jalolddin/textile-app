@@ -9,11 +9,11 @@
     <h1>Наши продукты</h1>
   </div>
     <select name="categories" id="#">
-<option  v-for="category in categories" :key="category" :value="category.title_ru">{{category.title_uz}}</option>
+<option  v-for="( index, category) in categories" :key="index" :value="category.title_ru">{{category.title_uz}}</option>
     </select>
 </div>
 <div class="products__clothes">
-    <div v-for="product in products" :key="product">
+    <div v-for="( index, product) in products" :key="index">
         <img :src="`${'https://amiragroup.uz/' + product.photo_link}`" alt="">
         <h3>{{product.title_ru}}</h3>
     </div>
