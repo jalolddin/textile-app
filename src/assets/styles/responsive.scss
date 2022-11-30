@@ -48,7 +48,7 @@
         line-height: 2.9rem
     }
     .main__header__text select {
-        width: 100%
+        width: 75%
     }
     .main__products h1 {
         font-size: 3rem
@@ -94,11 +94,11 @@
     .main__video .benefits {
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 47.5% 47.5%;
         width: 95%
     }
     .main__video .benefits span {
-        height: 1.1rem;
+        height: 1.3rem;
         font-size: .9rem
     }
     .main__video img {

@@ -6,14 +6,12 @@
     <router-link :to="{name: 'home'}">
     <img src="../assets/icons/back.png" alt="">
     </router-link>
-    <h1>Наши продукты</h1>
+    <h1 v-for="title in categories" :key="title" v-show="title.title_ru == 'Женские одежды'">{{title.title_ru}}</h1>
   </div>
-    <select name="categories" id="#">
-<option  v-for="( index, category) in categories" :key="index" :value="category.title_ru">{{category.title_uz}}</option>
-    </select>
+  
 </div>
 <div class="products__clothes">
-    <div v-for="( index, product) in products" :key="index">
+    <div v-show="product.category_title_uz == 'Ayollar kiyimlari'" v-for="product in products" :key="product">
         <img :src="`${'https://amiragroup.uz/' + product.photo_link}`" alt="">
         <h3>{{product.title_ru}}</h3>
     </div>
@@ -24,7 +22,7 @@
 <div class="main__footer">
 <div class="logo">
   <img src="../assets/images/amiran__logo.png" alt="">
-  <h3> сочетание стиля и комфорта</h3>
+  <h3>сочетание стиля и комфорта</h3>
 </div>
 <div class="line"></div>
 <div class="address">
@@ -38,17 +36,27 @@
   <h2>Контакты</h2>
   <div>
   <p>+998934820707</p>
-  <p>amiragroup.uz@gmail.com</p>
+  <a href="https://mail.google.com/mail">
+    <p>amiragroup.uz@gmail.com</p>
+  </a>
   </div>
 </div>
 <div class="line"></div>
 <div class="social">
   <h2>Социальные сеть</h2>
   <div>
-    <img src="../assets/icons/telegram.svg" alt="">
-    <img src="../assets/icons/instagram.svg" alt="">
-    <img src="../assets/icons/facebook.svg" alt="">
-    <img src="../assets/icons/youtube.svg" alt="">
+    <a href="https://t.me/amiragroupuz">
+      <img src="../assets/icons/telegram.svg" alt="">
+    </a>
+    <a href="https://www.instagram.com/amiragroup.uz/">
+      <img src="../assets/icons/instagram.svg" alt="">
+    </a>
+    <a href="https://www.facebook.com/amiragroup.uz/">
+      <img src="../assets/icons/facebook.svg" alt="">
+    </a>
+    <a href="https://www.youtube.com/channel/UCR2GxQbZ9QrHRMkvjkO_SxA">
+      <img src="../assets/icons/youtube.svg" alt="">
+    </a>
   </div>
 
 </div>
@@ -71,6 +79,7 @@ data(){
         products: []
     }
 },
+
 created() {
             axios.get(`https://amiragroup.uz/api/categories/`).then((response) => {
                  this.categories = response.data
