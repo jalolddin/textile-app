@@ -24,7 +24,7 @@
         <div ref="proccess" class="main__company">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/9I02a1TPykI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <div>
-              <h1>Процесс производство</h1>
+              <h1>Процесс производствa</h1>
             <p>Трикотажная фабрика <span> “Amira Textile” </span> произоводит комфортную и стильную одежду для взрослых и детей.
             Мы создаём одежду от пряжи до готового изделия. Производимая пряжа наполовину состоит из местного сырья и наполовину из
             китайского и турецкого.</p>
@@ -33,7 +33,7 @@
         <div ref="company" class="main__video">
           <div>
 <h1>Kompany <span>"Amira Textile" </span></h1>
-<p>Наша компания производит различные трикотажную продукцию с мая 2022года.</p>
+<p>Наша компания производит различные трикотажные изделия с мая 2022года.</p>
 <div class="benefits">
     <span>Рубашки поло</span>
     <span>Мужские джемперы</span>
@@ -58,15 +58,15 @@
     <div ref="catalog" class="main__gallery">
 <h1>Категория товаров</h1>
 <div>
-<img src="../assets/products/img4.jpg" alt="">
-<img src="../assets/products/img5.jpg" alt="">
-<img src="../assets/products/img6.jpg" alt="">
-<img src="../assets/products/img7.jpg" alt="">
-<img src="../assets/products/img8.jpg" alt="">
-<img src="../assets/products/img12.jpg" alt="">
-<img src="../assets/products/img10.jpg" alt="">
-<img src="../assets/products/img11.jpg" alt="">
-<img src="../assets/products/img13.jpg" alt="">
+<img @click="goKids" src="../assets/products/img4.jpg" alt="">
+<img  @click="goKids" src="../assets/products/img5.jpg" alt="">
+<img  @click="goKids" src="../assets/products/img6.jpg" alt="">
+<img @click="goShoes" src="../assets/products/img7.jpg" alt="">
+<img @click="goShoes" src="../assets/products/img8.jpg" alt="">
+<img @click="goShoes" src="../assets/products/img12.jpg" alt="">
+<img @click="goWomen" src="../assets/products/wom_3.jpg" alt="">
+<img @click="goWomen" src="../assets/products/wom_6.jpg" alt="">
+<img @click="goWomen" src="../assets/products/wom_5.jpg" alt="">
 </div>
 </div>
 
@@ -132,7 +132,7 @@
 <div class="main__footer">
 <div class="logo">
   <img src="../assets/images/amiran__logo.png" alt="">
-  <h3>сочетание стиля и комфорта</h3>
+  <h3>Сочетание стиля и комфорта</h3>
 </div>
 <div class="line"></div>
 <div class="address">
@@ -153,7 +153,7 @@
 </div>
 <div class="line"></div>
 <div class="social">
-  <h2>Социальные сеть</h2>
+  <h2>Мы в социальных сетях</h2>
   <div>
     <a href="https://t.me/amiragroupuz">
       <img src="../assets/icons/telegram.svg" alt="">
@@ -192,6 +192,15 @@ export default {
     Navbar,
   },
   methods: {
+    goWomen(){
+this.$router.push('products/women')
+    },
+    goKids(){
+this.$router.push('/products/kids')
+    },
+    goShoes(){
+this.$router.push('/products/shoes')
+    },
     changeRoute(e) {
     this.$router.push("/" + e.target.value);
   },

@@ -9,7 +9,7 @@
         <!-- Navbar Links -->
 
         <ul class="navbar__links">
-            <li @click="proccess">Процесс производство</li>
+            <li @click="proccess">Процесс производствa</li>
             <li @click="company">О компании</li>
             <li @click="ranking">Наши показатели</li>
             <li @click="news">Новости</li>
