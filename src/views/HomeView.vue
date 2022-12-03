@@ -142,6 +142,7 @@
   <h2>{{$t('contact')}}</h2>
   <div>
   <p>+998934820707</p>
+  <p>+998996000555</p>
   <a href="https://mail.google.com/mail">
     <p>amiragroup.uz@gmail.com</p>
   </a>
