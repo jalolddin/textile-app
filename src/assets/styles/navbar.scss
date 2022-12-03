@@ -15,6 +15,20 @@ body {
     margin: 0 auto;
     color: #282739;
     background-color: rgba(0, 0, 0, 0.5);
+    .langSelect {
+        outline: none;
+        padding-left: 0.4rem;
+        width: 3.5rem;
+        height: 2.5rem;
+        border-radius: .3rem;
+        background: none;
+        color: #85ba15;
+        border: 1px solid #85ba15;
+        cursor: pointer;
+        font-size: 1rem;
+        // margin-left: -1.5rem;
+        margin-top: -0.7%;
+    }
     &__logo {
         width: 213px;
         height: 98px;
@@ -40,7 +54,7 @@ body {
     }
     &__links {
         display: flex;
-        width: 40%;
+        width: 44%;
         justify-content: space-between;
         padding: 0;
         li {

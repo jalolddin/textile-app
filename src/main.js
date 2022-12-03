@@ -8,9 +8,11 @@ import './assets/styles/products.scss'
 import Dropdown from 'vue-simple-search-dropdown';
 
 import 'swiper/css'
+import i18n from './i18n'
 Vue.config.productionTip = false
 new Vue({
     Dropdown,
     router,
+    i18n,
     render: h => h(App)
 }).$mount('#app')

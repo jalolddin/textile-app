@@ -6,14 +6,19 @@
     <router-link :to="{name: 'home'}">
     <img src="../assets/icons/back.png" alt="">
     </router-link>
-    <h1 v-for="title in categories" :key="title" v-show="title.title_ru == 'Мужские одежды'">{{title.title_ru}}</h1>
+    <!-- <h1 v-for="title in categories" :key="title" v-show="title.title_ru == 'Мужские одежды'">{{title.title_ru}}</h1> -->
+    <h1 v-for="title in categories" :key="title" v-show="title.title_ru == 'Мужские одежды' && lang === 'ru'">{{title.title_ru}}</h1>
+    <h1 v-for="title in categories" :key="title" v-show="title.title_ru == 'Мужские одежды' && lang === 'uz'">{{title.title_uz}}</h1>
+    <h1 v-for="title in categories" :key="title" v-show="title.title_ru == 'Мужские одежды' && lang === 'en'">{{title.title_en}}</h1>
   </div>
 
 </div>
 <div class="products__clothes">
     <div v-show="product.category_title_uz == 'Erkaklar kiyimlari'" v-for="product in products" :key="product">
         <img :src="`${'https://amiragroup.uz/' + product.photo_link}`" alt="">
-        <h3>{{product.title_ru}}</h3>
+        <h3 v-if="lang === 'ru'">{{product.title_ru}}</h3>
+        <h3 v-if="lang === 'uz'">{{product.title_uz}}</h3>
+        <h3 v-if="lang === 'en'">{{product.title_en}}</h3>
     </div>
 </div>
 
@@ -76,7 +81,8 @@ components: {
 data(){
     return{
         categories: [],
-        products: []
+        products: [],
+        lang: JSON.parse(localStorage.getItem('lang'))
     }
 },
 created() {

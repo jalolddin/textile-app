@@ -48,7 +48,8 @@
         line-height: 2.9rem
     }
     .main__header__text select {
-        width: 75%
+        width: 60%;
+        text-align: center;
     }
     .main__products h1 {
         font-size: 3rem
@@ -83,7 +84,8 @@
     }
     .main__video div h1 {
         text-align: center;
-        margin: 0 auto
+        margin: 0 auto;
+        font-size: 2.5rem;
     }
     .main__video div p {
         text-align: center
@@ -113,8 +115,11 @@
         display: flex;
         flex-direction: column
     }
+    .main__statistic h1 {
+        font-size: 2.5rem
+    }
     .main__news h1 {
-        font-size: 3rem
+        font-size: 2.5rem
     }
     .main__news .news {
         display: flex;
@@ -133,7 +138,7 @@
         padding-bottom: 0
     }
     .main__map h1 {
-        font-size: 3rem
+        font-size: 2.5rem
     }
     .main__map .mapouter {
         width: 95%;
@@ -145,7 +150,7 @@
         height: 100%
     }
     .main__gallery h1 {
-        font-size: 3rem
+        font-size: 2.5rem
     }
     .main__gallery div {
         padding-top: 2rem;
@@ -277,7 +282,8 @@
         line-height: 3.5rem
     }
     .main__header__text select {
-        width: 40%
+        width: 40%;
+        text-align: center;
     }
     .main__products h1 {
         font-size: 3rem
@@ -425,7 +431,10 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        gap: 8rem;
+        // gap: 8rem;
+        p {
+            margin: 0 auto;
+        }
     }
     .main__footer h2 {
         font-size: 2rem;
